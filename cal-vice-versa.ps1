@@ -66,10 +66,10 @@ foreach { echo "________________________________________________________________
     try { Add-MailboxFolderPermission $_":\calendar" -User $mbx -AccessRights reviewer -ErrorAction Stop |
 
 ## ===[ Tell the world of the good you have done ]================================ ##
-    Write-Host "|==============[ Added Reviewer access to the calendar ]===============|`n" -ForegroundColor white -BackgroundColor green } 
+    Write-Host "|==============[ Added Reviewer access to the calendar ]===============|" -ForegroundColor white -BackgroundColor green } 
 
 ## ===[ or you can confess your sins back to the screens ]================================ ##
-    catch { Write-Host "|==============[ Skipped - Already has Access! ]===============|" -ForegroundColor yellow -BackgroundColor red }
+    catch { Write-Host "|==============[ Skipped - Already has Access! ]===============|`n" -ForegroundColor yellow -BackgroundColor red }
     
  } ## ===[ Closing the foreach #2 ]================================ ##
   
