@@ -51,7 +51,7 @@ ForEach-Object {$_ -replace '@{PrimarySmtpAddress=' -replace '}' }
 foreach ($mbx in $mbxs) {
 
 ## ===[ Tell everyone whats up ]============================================= ##
-Write-Host "Working on " $mbx -ForegroundColor yellow -BackgroundColor red
+Write-Host "Working on " $mbx -ForegroundColor yellow
 $confirmation = Read-Host "Do you want to continue with $mbx (y/N)"
 if ($confirmation -eq 'y') {
 
@@ -63,7 +63,7 @@ if ($confirmation -eq 'y') {
 foreach { echo "______________________________________________________________________" "$mbx being added to $_" "______________________________________________________________________"; 
 
 ## ===[ Setting a try statement to the add permission to manage the error ]================================ ##
-    try { Add-MailboxFolderPermission $_":\calendar" -User $mbx -AccessRights reviewer -ErrorAction Stop |
+    try { Add-MailboxFolderPermission $_":\calendar" -User $mbx -AccessRights reviewer -ErrorAction Stop 
 
 ## ===[ Tell the world of the good you have done ]================================ ##
     Write-Host "|==============[ Added Reviewer access to the calendar ]===============|" -ForegroundColor white -BackgroundColor green } 
